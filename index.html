@@ -11,6 +11,11 @@
       <video class="hero__video" autoplay muted loop playsinline poster="" aria-label="中国航天主题背景视频">
         <!-- 将你的视频放到 assets/home-background.mp4，首页会自动作为背景播放。 -->
         <source src="assets/home-background.mp4" type="video/mp4" />
+        <source src="assets/home-background.webm" type="video/webm" />
+        您的浏览器不支持 HTML5 视频播放。
+      </video>
+      <div class="hero__overlay"></div>
+      <p class="video-status" role="status">没有检测到背景视频：请确认视频在 assets 文件夹中，并命名为 home-background.mp4 或 home-background.webm。</p>
         您的浏览器不支持 HTML5 视频播放。
       </video>
       <div class="hero__overlay"></div>
@@ -29,6 +34,7 @@
         <div class="hero__actions">
           <a class="button button--primary" href="#milestones">查看航天征程</a>
           <a class="button button--ghost" href="#future">展望深空未来</a>
+          <button class="button sound-toggle" type="button" aria-pressed="false">开启视频声音</button>
         </div>
       </section>
     </header>
@@ -84,5 +90,36 @@
     <footer>
       <p>© 2026 星河逐梦 · 致敬每一位中国航天追梦人</p>
     </footer>
+    <script>
+      const heroVideo = document.querySelector(".hero__video");
+      const soundToggle = document.querySelector(".sound-toggle");
+
+      function markVideoMissing() {
+        document.body.classList.add("video-missing");
+      }
+
+      if (heroVideo) {
+        heroVideo.addEventListener("canplay", () => {
+          document.body.classList.add("video-loaded");
+          document.body.classList.remove("video-missing");
+          heroVideo.play().catch(markVideoMissing);
+        });
+        heroVideo.addEventListener("error", markVideoMissing);
+        window.setTimeout(() => {
+          if (heroVideo.readyState < 2) {
+            markVideoMissing();
+          }
+        }, 2500);
+      }
+
+      if (heroVideo && soundToggle) {
+        soundToggle.addEventListener("click", () => {
+          heroVideo.muted = !heroVideo.muted;
+          soundToggle.setAttribute("aria-pressed", String(!heroVideo.muted));
+          soundToggle.textContent = heroVideo.muted ? "开启视频声音" : "关闭视频声音";
+          heroVideo.play().catch(markVideoMissing);
+        });
+      }
+    </script>
   </body>
 </html>
