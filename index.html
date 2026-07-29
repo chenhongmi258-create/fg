@@ -24,6 +24,8 @@
         <div class="hero-video-card reveal" aria-label="封面页背景视频区域">
           <video class="site-video" autoplay muted loop playsinline aria-label="中国航天封面页背景视频">
             <source src="assets/home-background" type="video/mp4" />
+        <div class="hero-video-card" aria-label="封面页背景视频区域">
+          <video class="site-video" autoplay muted loop playsinline aria-label="中国航天封面页背景视频">
             <source src="assets/home-background.mp4" type="video/mp4" />
             <source src="assets/home-background.webm" type="video/webm" />
           </video>
@@ -34,6 +36,9 @@
           <h1>星河问天</h1>
           <p class="hero-subtitle">中国航天探索全景图谱</p>
           <p class="lead">星辰大海，永无止境。从东方红一号划破苍穹，到中国空间站巡游星海；从月背采样到火星巡视，中国航天以自主创新的火焰，照亮人类通往深空的辽阔航路。</p>
+          <p class="eyebrow">Page 01 · 星河启航</p>
+          <h1>星辰大海，永无止境<br />中国航天探索全景图谱</h1>
+          <p class="lead">从东方红一号划破苍穹，到中国空间站巡游星海；从月背采样到火星巡视，中国航天以自主创新的火焰，照亮人类通往深空的辽阔航路。</p>
           <div class="hero-actions">
             <a class="btn btn--primary" href="#page-2">开启十页旅程</a>
             <a class="btn btn--ghost" href="#page-6">查看国之重器</a>
@@ -92,5 +97,123 @@
     </main>
 
     <script src="app.js"></script>
+    <title>星河逐梦｜中国航天宣传站</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <video class="hero__video" autoplay muted loop playsinline poster="" aria-label="中国航天主题背景视频">
+        <!-- 将你的视频放到 assets/home-background.mp4，首页会自动作为背景播放。 -->
+        <source src="assets/home-background.mp4" type="video/mp4" />
+        <source src="assets/home-background.webm" type="video/webm" />
+        您的浏览器不支持 HTML5 视频播放。
+      </video>
+      <div class="hero__overlay"></div>
+      <p class="video-status" role="status">没有检测到背景视频：请确认视频在 assets 文件夹中，并命名为 home-background.mp4 或 home-background.webm。</p>
+        您的浏览器不支持 HTML5 视频播放。
+      </video>
+      <div class="hero__overlay"></div>
+      <nav class="nav" aria-label="主导航">
+        <a class="nav__brand" href="#home">中国航天</a>
+        <div class="nav__links">
+          <a href="#mission">使命</a>
+          <a href="#milestones">里程碑</a>
+          <a href="#future">未来</a>
+        </div>
+      </nav>
+      <section class="hero__content">
+        <p class="eyebrow">向星辰大海进发</p>
+        <h1>探索无垠宇宙，见证中国航天力量</h1>
+        <p class="hero__lead">从东方红一号到空间站常驻，从探月工程到火星探测，中国航天以自立自强的脚步，把民族梦想写入浩瀚星河。</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#milestones">查看航天征程</a>
+          <a class="button button--ghost" href="#future">展望深空未来</a>
+          <button class="button sound-toggle" type="button" aria-pressed="false">开启视频声音</button>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section intro" id="mission">
+        <div>
+          <p class="eyebrow">使命担当</p>
+          <h2>以科技自强托举民族复兴</h2>
+        </div>
+        <p>中国航天坚持和平利用太空，服务国家发展与人类进步。一次次发射、一项项突破，凝聚着工程师、科研人员与航天员的智慧和勇气，也激励更多青年奔赴科学探索的前沿。</p>
+      </section>
+
+      <section class="cards" aria-label="中国航天重点成果">
+        <article class="card">
+          <span>01</span>
+          <h3>载人航天</h3>
+          <p>神舟飞船与天宫空间站构建起稳定的太空家园，让中国人长期驻留太空成为现实。</p>
+        </article>
+        <article class="card">
+          <span>02</span>
+          <h3>探月工程</h3>
+          <p>嫦娥系列任务实现绕、落、回跨越，持续推进月球科学研究与资源认知。</p>
+        </article>
+        <article class="card">
+          <span>03</span>
+          <h3>行星探测</h3>
+          <p>天问任务迈向更远深空，拓展人类对火星及太阳系的理解边界。</p>
+        </article>
+      </section>
+
+      <section class="section timeline" id="milestones">
+        <p class="eyebrow">里程碑</p>
+        <h2>跨越苍穹的中国足迹</h2>
+        <div class="timeline__grid">
+          <article><strong>1970</strong><p>东方红一号发射成功，中国开启独立进入太空的新篇章。</p></article>
+          <article><strong>2003</strong><p>神舟五号载人飞行成功，中华民族千年飞天梦圆。</p></article>
+          <article><strong>2020</strong><p>嫦娥五号完成月球采样返回，带回珍贵月壤样品。</p></article>
+          <article><strong>2021</strong><p>天问一号着陆火星，祝融号火星车开展巡视探测。</p></article>
+          <article><strong>2022</strong><p>中国空间站完成在轨建造，长期有人驻留进入新阶段。</p></article>
+        </div>
+      </section>
+
+      <section class="future" id="future">
+        <div class="future__panel">
+          <p class="eyebrow">未来愿景</p>
+          <h2>面向月球、火星与更深远的宇宙</h2>
+          <p>中国航天将继续推动空间科学、深空探测、空间应用与国际合作，让更多创新成果服务地球生活，也让人类共同的星际梦想更近一步。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 星河逐梦 · 致敬每一位中国航天追梦人</p>
+    </footer>
+    <script>
+      const heroVideo = document.querySelector(".hero__video");
+      const soundToggle = document.querySelector(".sound-toggle");
+
+      function markVideoMissing() {
+        document.body.classList.add("video-missing");
+      }
+
+      if (heroVideo) {
+        heroVideo.addEventListener("canplay", () => {
+          document.body.classList.add("video-loaded");
+          document.body.classList.remove("video-missing");
+          heroVideo.play().catch(markVideoMissing);
+        });
+        heroVideo.addEventListener("error", markVideoMissing);
+        window.setTimeout(() => {
+          if (heroVideo.readyState < 2) {
+            markVideoMissing();
+          }
+        }, 2500);
+      }
+
+      if (heroVideo && soundToggle) {
+        soundToggle.addEventListener("click", () => {
+          heroVideo.muted = !heroVideo.muted;
+          soundToggle.setAttribute("aria-pressed", String(!heroVideo.muted));
+          soundToggle.textContent = heroVideo.muted ? "开启视频声音" : "关闭视频声音";
+          heroVideo.play().catch(markVideoMissing);
+        });
+      }
+    </script>
   </body>
 </html>
