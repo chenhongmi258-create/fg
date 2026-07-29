@@ -7,6 +7,7 @@
 把首页/全站背景视频放入 `assets` 文件夹，并命名为以下任一文件名：
 
 ```text
+assets/home-background
 assets/home-background.mp4
 assets/home-background.webm
 ```
@@ -20,6 +21,15 @@ assets/home-background.webm
 你提供的前 3 张现代航天图片、后 3 张敦煌飞天/神话图片，可以按下面文件名放入 `assets` 文件夹：
 
 ```text
+assets/space-panorama-1       # 第 1 页：中国航天全景概览
+assets/rocket-launch-1        # 第 6 页：长征火箭
+assets/rocket-launch-2        # 第 5 页：天宫/发射相关背景
+assets/feitian-1              # 第 2 页：敦煌飞天壁画
+assets/feitian-astronaut      # 第 3 页：飞天与宇航员相遇
+assets/space-panorama-3       # 第 10 页：未来深空展望
+```
+
+程序会优先读取你截图里的无后缀文件名，也兼容 `.jpg`、`.png`、`.webp` 后缀。
 assets/space-panorama-1.jpg      # 第 1 页：中国航天全景概览
 assets/rocket-launch-1.jpg       # 第 6 页：长征火箭
 assets/rocket-launch-2.jpg       # 第 5 页：天宫/发射相关背景

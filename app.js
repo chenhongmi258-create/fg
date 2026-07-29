@@ -53,3 +53,27 @@ window.addEventListener('scroll', () => {
     bg.style.transform = `translateY(${(y - bg.parentElement.offsetTop) * 0.08}px) scale(1.06)`;
   });
 }, { passive: true });
+
+const assetCandidates = {
+  'image-space-01': ['assets/space-panorama-1', 'assets/space-panorama-1.jpg', 'assets/space-panorama-1.png', 'assets/space-panorama-1.webp'],
+  'image-space-02': ['assets/rocket-launch-2', 'assets/rocket-launch-2.jpg', 'assets/rocket-launch-2.png', 'assets/rocket-launch-2.webp'],
+  'image-space-03': ['assets/space-panorama-3', 'assets/space-panorama-3.jpg', 'assets/space-panorama-3.png', 'assets/space-panorama-3.webp'],
+  'image-rocket-01': ['assets/rocket-launch-1', 'assets/rocket-launch-1.jpg', 'assets/rocket-launch-1.png', 'assets/rocket-launch-1.webp'],
+  'image-feitian-01': ['assets/feitian-1', 'assets/feitian-1.jpg', 'assets/feitian-1.png', 'assets/feitian-1.webp'],
+  'image-feitian-astronaut': ['assets/feitian-astronaut', 'assets/feitian-astronaut.jpg', 'assets/feitian-astronaut.png', 'assets/feitian-astronaut.webp']
+};
+
+function useFirstExistingImage(className, candidates) {
+  const target = document.querySelector(`.${className}`);
+  if (!target) return;
+  const tryNext = (index) => {
+    if (index >= candidates.length) return;
+    const probe = new Image();
+    probe.onload = () => { target.style.backgroundImage = `url("${candidates[index]}")`; };
+    probe.onerror = () => tryNext(index + 1);
+    probe.src = candidates[index];
+  };
+  tryNext(0);
+}
+
+Object.entries(assetCandidates).forEach(([className, candidates]) => useFirstExistingImage(className, candidates));

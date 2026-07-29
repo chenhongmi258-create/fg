@@ -64,6 +64,120 @@
   .site-video {
     object-fit: contain;
   }
+}
+
+/* Latest visual tuning: make the cover title cleaner and the video visible but not oversized. */
+.page--hero {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 42vw);
+  align-items: center;
+}
+
+.hero-grid {
+  max-width: 660px;
+}
+
+.hero-badge,
+.hero-subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-badge {
+  margin-bottom: 18px;
+  padding: 8px 14px;
+  border: 1px solid rgba(253, 224, 71, .28);
+  border-radius: 999px;
+  background: rgba(21, 52, 98, .42);
+  color: #fde047;
+  font-weight: 800;
+  letter-spacing: .12em;
+  backdrop-filter: blur(10px);
+}
+
+.page--hero h1 {
+  white-space: nowrap;
+  font-size: clamp(54px, 8vw, 132px);
+  letter-spacing: .08em;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  margin: 0 0 24px;
+  font-size: clamp(22px, 3.2vw, 46px);
+  font-weight: 900;
+  color: #e2e8f0;
+  letter-spacing: .18em;
+  text-shadow: 0 10px 32px rgba(0, 0, 0, .48);
+}
+
+.hero-video-card {
+  position: relative;
+  inset: auto;
+  z-index: 1;
+  width: min(520px, 42vw);
+  height: min(68vh, 620px);
+  justify-self: end;
+  border-color: rgba(253, 224, 71, .2);
+}
+
+.hero-video-card::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: 2;
+  pointer-events: none;
+  border: 1px solid rgba(253, 224, 71, .24);
+  border-radius: clamp(18px, 3vw, 36px);
+}
+
+.hero-video-card::after {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(253, 224, 71, .16), transparent 34%),
+    linear-gradient(90deg, rgba(11, 19, 43, .36), rgba(11, 19, 43, .08) 48%, rgba(11, 19, 43, .42));
+}
+
+.site-video {
+  opacity: .96;
+  filter: saturate(.98) contrast(.98) brightness(.86);
+}
+
+.page--hero::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  width: 180px;
+  height: 180px;
+  z-index: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 224, 71, .36), rgba(234, 179, 8, .06) 58%, transparent 62%);
+  filter: blur(.2px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.image-space-01 { background-image: url("assets/space-panorama-1"), url("assets/space-panorama-1.jpg"); }
+.image-space-02 { background-image: url("assets/rocket-launch-2"), url("assets/rocket-launch-2.jpg"); }
+.image-space-03 { background-image: url("assets/space-panorama-3"), url("assets/space-panorama-3.jpg"); }
+.image-rocket-01 { background-image: url("assets/rocket-launch-1"), url("assets/rocket-launch-1.jpg"); }
+.image-feitian-01 { background-image: url("assets/feitian-1"), url("assets/feitian-1.jpg"); }
+.image-feitian-astronaut { background-image: url("assets/feitian-astronaut"), url("assets/feitian-astronaut.jpg"); }
+
+@media (max-width: 900px) {
+  .page--hero {
+    grid-template-columns: 1fr;
+  }
+
+  .page--hero h1 {
+    white-space: normal;
+    font-size: clamp(46px, 14vw, 78px);
+  }
+
+  .hero-video-card {
+    width: 100%;
+    height: min(44vh, 430px);
+    justify-self: stretch;
+  }
 :root {
   color: #f8fbff;
   font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
