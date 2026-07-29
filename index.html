@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <video class="site-video" autoplay muted loop playsinline aria-label="中国航天全站背景视频">
-      <source src="assets/home-background.mp4" type="video/mp4" />
-      <source src="assets/home-background.webm" type="video/webm" />
-    </video>
     <div class="cosmos-noise" aria-hidden="true"></div>
     <div class="orbit-light" aria-hidden="true"></div>
 
@@ -25,6 +21,12 @@
     <main>
       <section id="page-1" class="page page--hero theme-tech" data-theme="tech">
         <div class="page__bg image-space-01"></div>
+        <div class="hero-video-card" aria-label="封面页背景视频区域">
+          <video class="site-video" autoplay muted loop playsinline aria-label="中国航天封面页背景视频">
+            <source src="assets/home-background.mp4" type="video/mp4" />
+            <source src="assets/home-background.webm" type="video/webm" />
+          </video>
+        </div>
         <div class="hero-grid reveal">
           <p class="eyebrow">Page 01 · 星河启航</p>
           <h1>星辰大海，永无止境<br />中国航天探索全景图谱</h1>
